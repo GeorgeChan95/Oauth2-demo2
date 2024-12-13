@@ -20,6 +20,13 @@ public class JwtAuthenticationLoginFilter extends AbstractAuthenticationProcessi
         super(new AntPathRequestMatcher("/login", "POST"));
     }
 
+    /**
+     *  这个方法主要作用就是获取客户端传递的username、password，
+     *  封装成UsernamePasswordAuthenticationToken交给ProviderManager的进行认证
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) {
         //获取表单提交数据

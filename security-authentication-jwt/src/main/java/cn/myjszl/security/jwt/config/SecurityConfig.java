@@ -25,11 +25,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private JwtAuthenticationSecurityConfig jwtAuthenticationSecurityConfig;
+    private JwtAuthenticationSecurityConfig jwtAuthenticationSecurityConfig; // 注入登录过滤器配置
     @Autowired
-    private EntryPointUnauthorizedHandler entryPointUnauthorizedHandler;
+    private EntryPointUnauthorizedHandler entryPointUnauthorizedHandler; // 未登录用户请求拦截配置
     @Autowired
-    private RequestAccessDeniedHandler requestAccessDeniedHandler;
+    private RequestAccessDeniedHandler requestAccessDeniedHandler; // 登录用户权限不足请求拦截配置
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
