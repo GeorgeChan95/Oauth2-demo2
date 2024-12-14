@@ -20,7 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
-     * 加密算法
+     * 加密算法,采用BCryptPasswordEncoder加密
      */
     @Bean
     PasswordEncoder passwordEncoder() {

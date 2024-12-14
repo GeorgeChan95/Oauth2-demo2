@@ -23,6 +23,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--spring security的依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
