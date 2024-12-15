@@ -50,9 +50,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    /**
+     * token增强,使用jwt
+     */
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 
+    /**
+     * 处理客户端认证异常
+     */
     @Autowired
     private OAuthServerAuthenticationEntryPoint authenticationEntryPoint;
 

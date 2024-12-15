@@ -52,6 +52,18 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     /**
+     * 方法作用：
+     *      - 配置资源服务器的核心属性，比如资源 ID、令牌服务（Token Services）、令牌解析器（Token Store/Token Enhancer）等。
+     *      - 定义与资源服务器本身相关的安全性配置。
+     *
+     * 常见用途：
+     *      - 设置资源服务器的标识（Resource ID）。
+     *      - 定义令牌验证方式，例如使用 JWT 或 远程校验（通过 RemoteTokenServices）
+     *      - 自定义异常处理器。
+     * 关键点：
+     *      - 该方法通常用于配置资源服务器如何处理访问令牌（Access Token）的验证逻辑。
+     *      - 如果你的资源服务器需要与授权服务器通信或自定义令牌解析，就需要在这里定义。
+     *
      * 配置资源id和令牌校验服务
      */
     @Override
@@ -67,6 +79,18 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     /**
+     * 方法作用：
+     *      - 配置与 HTTP 请求相关的安全性规则，例如：
+     *          - 资源的访问控制（基于 URL 的权限）
+     *          - CSRF 保护。
+     *          - Session 管理等。
+     * 常见用途：
+     *      - 定义哪些请求路径需要认证、哪些可以公开访问。
+     *      - 配置访问控制规则（基于角色、Scope 等）。
+     *      - 自定义登录、注销行为。
+     * 关键点：
+     *      - 这个方法是用来定义 资源服务器对请求的具体保护策略。
+     *      - 一般与 OAuth2 的 Scope 或用户角色相结合，控制资源的访问权限。
      * 配置security的安全机制
      */
     @Override
